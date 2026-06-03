@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #602b7b;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+img {
+    height: 150px;
+}
+
+.topline {
+    display: flex;
+    justify-content: center;
+}
+
+.topline ul{
+    width: 50vh;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.topline ul li {
+    width: 100px;
+    height: 30px;
+    background-color: #833aa8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.topline ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.cardContainer{
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    width: 650px;
+    height: 100px;
+    background-color: #ffd441;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #620080;
+    padding: 10px;
+}
+
+.interface {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.interface button{
+    width: 86px;
+    height: 31px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    color: white;
+}
+
+.interface button:hover {
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+
+.order {
+    background-color: #3CD070;
+}
+
+.delete {
+    background-color: #FF6B6B;
+}
+
+.order:active {
+    background-color: #44e67c;
+    color: black;
+}
+
+.delete:active {
+    background-color: #ff8383;
+    color: black;
+}
+
+.error {
+    color: #602b7b;
+}
+
+
+@media (max-width: 768px) {
+    img {
+        height: 40px;
+    }
+
+    .card {
+        width: 270px;
+    }
+}
