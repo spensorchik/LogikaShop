@@ -14,7 +14,7 @@ img {
     height: 150px;
 }
 
-.topline {
+.topline, .head {
     display: flex;
     justify-content: center;
 }
