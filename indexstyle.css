@@ -14,9 +14,15 @@ img {
     height: 150px;
 }
 
-.topline, .head {
+.topline {
     display: flex;
     justify-content: center;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .topline ul{
