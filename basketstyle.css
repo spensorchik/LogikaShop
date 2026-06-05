@@ -28,6 +28,12 @@ img {
     justify-content: center;
 }
 
+.head {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .topline ul{
     width: 50vh;
     display: flex;
