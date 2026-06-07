@@ -82,7 +82,13 @@ img {
     gap: 5px;
 }
 
-.interface button{
+.bottomline {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.order, .delete , .orderAll, .deleteAll{
     width: 86px;
     height: 31px;
     border: none;
@@ -91,33 +97,32 @@ img {
     color: white;
 }
 
-.interface button:hover {
+.interface button:hover, .bottomline button:hover {
     transform: scale(1.2);
     border-radius: 5px;
 }
 
-.order {
+.order, .orderAll{
     background-color: #3CD070;
 }
 
-.delete {
+.delete, .deleteAll{
     background-color: #FF6B6B;
 }
 
-.order:active {
+.order:active, .orderAll:active {
     background-color: #44e67c;
     color: black;
 }
 
-.delete:active {
+.delete:active, .deleteAll:active {
     background-color: #ff8383;
     color: black;
 }
 
-.error {
-    color: #602b7b;
+.message {
+    color: #8b47ad;
 }
-
 
 @media (max-width: 768px) {
     img {

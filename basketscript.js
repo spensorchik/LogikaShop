@@ -1,4 +1,5 @@
 const cardContainer = document.querySelector("#Container")
+const bottomline = document.querySelector(".bottomline")
 
 let basket = JSON.parse(localStorage.getItem("LG_basket"))
 
@@ -9,6 +10,46 @@ if (!basket) {
 
 function renderCard () {
     cardContainer.innerHTML = ""
+    bottomline.innerHTML = ""
+
+    if (basket.length === 0) {
+        const message = document.createElement("p")
+        message.className = "message"
+        message.textContent = "Корзина пуста :("
+        cardContainer.append(message)
+        return
+    }
+
+    const orderAll = document.createElement("button")
+    const deleteAll = document.createElement("button")
+
+    orderAll.className = "orderAll"
+    deleteAll.className = "deleteAll"
+
+    orderAll.textContent = "Замовити все"
+    deleteAll.textContent = "Видалити все"
+
+    orderAll.onclick = function () {
+        const Agreed =  confirm("Ви точно хочете замовити все?")
+        if (Agreed) {
+            alert("Всі товари будуть доставлені")
+            basket = []
+            localStorage.clear()
+            renderCard()
+        }
+    }
+
+    deleteAll.onclick = function () {
+        const Agreed =  confirm("Ви точно хочете видалити все?")
+        if (Agreed) {
+            alert("Всі товари видалені")
+            basket = []
+            localStorage.clear()
+            renderCard()
+        }
+    }
+
+    bottomline.append(orderAll, deleteAll)
 
     basket.forEach((element, index) => {
         const card = document.createElement("div")
