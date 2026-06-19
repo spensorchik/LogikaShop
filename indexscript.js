@@ -94,6 +94,6 @@ function getDailyProduct(list) {
 }
 
 const DailyProduct = getDailyProduct(CardList)
- 
+
 const renderProduct = renderCard(DailyProduct)
 best.append(renderProduct)
