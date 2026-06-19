@@ -13,6 +13,8 @@ const CardList = [
     {name:"Шопер", price:25, img:"images/shopping.png"},
     {name:"Парні значки", price:35, img:"images/pins.png"},
     {name:"Наушники", price:290, img:"images/headphones.jpg"},
+    {name:"Фотоапарат", price:250, img:"images/Fujifilm-Instax-Mini-11.png"},
+    {name:"Окуляри", price:150, img:"images/glasses.jpg"}
 ]
 
 let basket = JSON.parse(localStorage.getItem("LG_basket"))
