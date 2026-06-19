@@ -1,4 +1,5 @@
 const cardContainer = document.querySelector("#Container")
+const best = document.querySelector("#best")
 
 const CardList = [
     {name:"Браслет", price:5, img:"images/bracelet.png"},
@@ -40,8 +41,8 @@ function renderCard (list) {
     const nameLabel = document.createElement("h2")
     nameLabel.textContent = list.name
 
-    const priseLabel = document.createElement("h3")
-    priseLabel.textContent = `Ціна:${list.price}`
+    const priceLabel = document.createElement("h3")
+    priceLabel.textContent = `Ціна:${list.price}`
 
     const btn = document.createElement("button")
     btn.textContent = "Замовити"
@@ -57,7 +58,7 @@ function renderCard (list) {
 
     card.append(img, interface)
     interface.append(info, btn)
-    info.append(nameLabel, priseLabel)
+    info.append(nameLabel, priceLabel)
 
     return card
 }
@@ -66,3 +67,33 @@ CardList.forEach(id => {
     const createCard = renderCard(id)
     cardContainer.append(createCard)
 })
+
+function seededRandom(seed) {
+    let x = Math.sin(seed++) * 10000
+    return x - Math.floor(x)
+}
+
+function getTimeSeed() {
+    const today = new Date()
+    
+    today.setUTCHours(today.getUTCHours() + 3);
+    
+    const yyyy = today.getUTCFullYear()
+    const mm = String(today.getUTCMonth() + 1).padStart(2, '0')
+    const dd = String(today.getUTCDate()).padStart(2, '0')
+    
+    return parseInt(`${yyyy}${mm}${dd}`)
+}
+
+function getDailyProduct(list) {
+    const seed = getTimeSeed()
+    const randomValue = seededRandom(seed)
+
+    const productIndex = Math.floor(randomValue * list.length)
+    return list[productIndex]
+}
+
+const DailyProduct = getDailyProduct(CardList)
+
+const renderProduct = renderCard(DailyProduct)
+best.append(renderProduct)

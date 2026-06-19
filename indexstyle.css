@@ -10,6 +10,14 @@ html {
     overflow-x: hidden;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 img {
     height: 150px;
 }
@@ -48,7 +56,7 @@ img {
 }
 
 .cardContainer{
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -126,6 +134,25 @@ img {
 .basket img:hover {
     transform: scale(1.4);
     border-radius: 10px;
+}
+
+.topCardLine {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.bestContainer {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bestContainer h2 {
+    margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
